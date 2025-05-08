@@ -7,12 +7,15 @@ import { useGlobalContext } from "./context"
 
 
 export const App = () => {
-  // const data = useContext(AppContext)
+  const data = useContext(AppContext)
   return (
     <>
+    <h2>My Tech News Post</h2>
     <div>The data is {data}</div>
-      <Search/>
+      <Search/> 
+      <br />
       <Pagination/>
+      <br />
       <Stories/>
     </>
   )

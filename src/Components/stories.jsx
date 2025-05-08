@@ -38,7 +38,7 @@ export const Stories = () => {
 
 
   return <>
-    <h2>My Tech News Post</h2>
+    
 
     {
 

@@ -1,7 +1,7 @@
 export const Pagination = () => {
     return (
       <>
-        PAgination space
+        Pagination section
       </>
     )
   }
