@@ -5,7 +5,11 @@ export const Stories = () => {
 
   const { hits, nbPages, isLoading, removePost } = useGlobalContext();
 
-  if (!isLoading) return "Loading...";
+  if (!isLoading) {
+    return (
+      <h1>Loading...</h1>
+    )
+  };
 
   // const [updatedArr, setUpdatedArr] = useState(hits);
 
