@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
 
     const initialState = {
         isLoading: true,
-        query: "CSS",           
+        query: "CSS",
         nbPages: 0,
         page: 0,
         hits: []
@@ -20,9 +20,9 @@ const AppProvider = ({ children }) => {
 
     const removePost = (post_ID) => {
         dispatch({
-            type:"REMOVE_POST",
-            payload:{
-                post_ID : post_ID
+            type: "REMOVE_POST",
+            payload: {
+                post_ID: post_ID
             }
         })
     };
@@ -30,12 +30,25 @@ const AppProvider = ({ children }) => {
     const SearchPost = (value) => {
         console.log(value);
         dispatch({
-            type:"SEARCH_QUERY",
-            payload:{
-                user_value : value
+            type: "SEARCH_QUERY",
+            payload: {
+                user_value: value
             }
         })
-        
+
+    }
+
+    // Pagination
+    const getPrevPage = () => {
+        dispatch({
+            type: "PREV_PAGE"
+        })
+    };
+
+    const getNextPage = () => {
+        dispatch({
+            type: "NEXT_PAGE"
+        })
     }
 
 
@@ -53,7 +66,7 @@ const AppProvider = ({ children }) => {
                 type: "GET_STORIES",
                 payload: {
                     hits: data.hits,
-                    nbPages: data.nbpages
+                    nbPages: data.nbPages
                 }
             })
 
@@ -65,12 +78,11 @@ const AppProvider = ({ children }) => {
 
     useEffect(() => {
         fatchApiData(`${api}query=${state.query}&page=${state.page}`);
-    }, [state.query]);
-
+    }, [state.query, state.page]);
 
 
     return (
-        <AppContext.Provider value={{ ...state, removePost, SearchPost }}>
+        <AppContext.Provider value={{ ...state, removePost, SearchPost, getPrevPage, getNextPage }}>
             {children}
         </AppContext.Provider>
     )
