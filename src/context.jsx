@@ -25,17 +25,28 @@ const AppProvider = ({ children }) => {
                 post_ID : post_ID
             }
         })
+    };
+
+    const SearchPost = (value) => {
+        console.log(value);
+        dispatch({
+            type:"SEARCH_QUERY",
+            payload:{
+                user_value : value
+            }
+        })
+        
     }
 
 
-    const fatchApiData = async () => {
+    const fatchApiData = async (url) => {
 
         dispatch({
             type: "SET_LOADING"
         })
 
         try {
-            const res = await fetch(`${api}query=${initialState.query}`);
+            const res = await fetch(url);
             const data = await res.json();
             console.log(data);
             dispatch({
@@ -53,13 +64,13 @@ const AppProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        fatchApiData();
-    }, []);
+        fatchApiData(`${api}query=${state.query}&page=${state.page}`);
+    }, [state.query]);
 
 
 
     return (
-        <AppContext.Provider value={{ ...state, removePost }}>
+        <AppContext.Provider value={{ ...state, removePost, SearchPost }}>
             {children}
         </AppContext.Provider>
     )

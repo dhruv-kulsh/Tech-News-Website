@@ -17,6 +17,11 @@ export const reducer = (state, action) => {
                 ...state,
                 hits: state.hits.filter((curElem) => curElem.objectID !==  action.payload.post_ID)
             }
+        case "SEARCH_QUERY":
+            return{
+                ...state,
+                query : action.payload.user_value
+            }
 
     }
     return state;
