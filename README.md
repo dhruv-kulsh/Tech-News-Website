@@ -11,8 +11,8 @@ A Single Page Application (SPA) built with **React.js** to display real-time glo
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js,  CSS
-- **API**: News API (e.g., GNews, NewsAPI)
+- **Frontend**: HTML, CSS, JavaScript, React.js
+- **API**:  News API - https://hn.algolia.com/api
 - **Development Tools**: VS Code, Git, GitHub
 
 ## 📦 Installation
