@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
 
     const initialState = {
         isLoading: true,
-        query: "CSS",
+        query: "CSS",           
         nbPages: 0,
         page: 0,
         hits: []

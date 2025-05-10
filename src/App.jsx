@@ -1,6 +1,6 @@
-import { Pagination } from "./Components/pagination"
+import { Pagination } from "./Components/Pagination"
 import { Search } from "./Components/Search"
-import { Stories } from "./Components/stories"
+import { Stories } from "./Components/Stories"
 
 export const App = () => {
   return (
