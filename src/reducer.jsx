@@ -12,6 +12,11 @@ export const reducer = (state, action) => {
                 nbpages: action.payload.nbpages,
                 isLoading: true
             }
+        case "REMOVE_POST":
+            return {
+                ...state,
+                hits: state.hits.filter((curElem) => curElem.objectID !==  action.payload.post_ID)
+            }
 
     }
     return state;

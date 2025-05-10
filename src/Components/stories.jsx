@@ -1,16 +1,26 @@
+import { useState } from "react";
 import { useGlobalContext } from "../context";
 
 export const Stories = () => {
 
-  const { hits, nbPages, isLoading } = useGlobalContext();
+  const { hits, nbPages, isLoading, removePost } = useGlobalContext();
 
-  if (!isLoading) return "Loading..."
+  if (!isLoading) return "Loading...";
+
+  // const [updatedArr, setUpdatedArr] = useState(hits);
+
+
+
+  // const handleRemoveBtn = (objectID) => {
+  //   console.log(objectID);
+  //   const filterdArr = hits.filter((newsItem) => newsItem.objectID !== objectID);
+  //   console.log(filterdArr);
+  //   setUpdatedArr(filterdArr)
+  // }
 
 
   return <>
     <div className="stories-div">
-
-
 
       {
         hits?.map((curPost, key) => {
@@ -25,11 +35,12 @@ export const Stories = () => {
                 <a href={url} target="_blank">
                   Read More
                 </a>
-                <a href="#">Remove</a>
+                {/* <a href="#" onClick={() => handleRemoveBtn(objectID)}>Remove</a> */}
+                <a href="#" onClick={() => removePost(objectID)}>Remove</a>
               </div>
             </div>
           )
-        })  
+        })
       }
     </div>
 

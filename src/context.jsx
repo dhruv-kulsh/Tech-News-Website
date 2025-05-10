@@ -18,6 +18,15 @@ const AppProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const removePost = (post_ID) => {
+        dispatch({
+            type:"REMOVE_POST",
+            payload:{
+                post_ID : post_ID
+            }
+        })
+    }
+
 
     const fatchApiData = async () => {
 
@@ -50,7 +59,7 @@ const AppProvider = ({ children }) => {
 
 
     return (
-        <AppContext.Provider value={{ ...state }}>
+        <AppContext.Provider value={{ ...state, removePost }}>
             {children}
         </AppContext.Provider>
     )
