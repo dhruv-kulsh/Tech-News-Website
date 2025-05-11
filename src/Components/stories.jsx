@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useGlobalContext } from "../context";
 
 export const Stories = () => {
@@ -10,18 +9,6 @@ export const Stories = () => {
       <h1>Loading...</h1>
     )
   };
-
-  // const [updatedArr, setUpdatedArr] = useState(hits);
-
-
-
-  // const handleRemoveBtn = (objectID) => {
-  //   console.log(objectID);
-  //   const filterdArr = hits.filter((newsItem) => newsItem.objectID !== objectID);
-  //   console.log(filterdArr);
-  //   setUpdatedArr(filterdArr)
-  // }
-
 
   return <>
     <div className="stories-div">
@@ -39,7 +26,6 @@ export const Stories = () => {
                 <a href={url} target="_blank">
                   Read More
                 </a>
-                {/* <a href="#" onClick={() => handleRemoveBtn(objectID)}>Remove</a> */}
                 <a href="#" onClick={() => removePost(objectID)}>Remove</a>
               </div>
             </div>
