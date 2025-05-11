@@ -1,6 +1,8 @@
 # 📰 Tech News Website
 
-A Single Page Application (SPA) built with **React.js** to display real-time global technology news by integrating a live news API.
+A Single Page Application (SPA) built with React.js to display real-time global technology news by integrating a live news API.
+
+🌐 Live Demo: https://gettechnews.netlify.app/
 
 ## 🚀 Features
 
