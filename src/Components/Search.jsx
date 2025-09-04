@@ -7,7 +7,7 @@ export const Search = () => {
     return(
         <>
            <div>
-            <h1>Get News on the Go!</h1>
+            <h1>Get News on the Gooo!</h1>
             <form onSubmit={(e) => e.preventDefault()}>
                 <div>
                     <input type="text" placeholder="Search Here" value={query} 
